@@ -9,7 +9,6 @@ export default function CandiesList({ candies = [] }) {
         candies.map((candy, i) => <CandyItem {...candy}
           className='candy' key={candy.name + candy.id + i}
          
-
         />)
       }
     

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getCandies } from './fetch-utils';
+import Spinner from './Spinner';
 import './App.css';
 import CandiesList from './CandiesList';
 // import your arrays here
@@ -20,13 +21,18 @@ function App() {
     fetchCandies();
   }, []);
 
-
-
+ 
 
   return (
     <div className="App">
-        Render all your lists here. Pass the arrays as props. YES
-      <CandiesList candies={candies}/>
+      <header className="things">
+        {
+          isLoadingCandies
+            ? <Spinner />
+            : <CandiesList candies={candies}/>
+        }
+        Render all your lists here. Pass the arrays as props.
+      </header>
     </div>
   );
 }

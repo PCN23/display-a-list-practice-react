@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  flex-wrap: wrap;
+  border: 5px solid red;
+  
 }
 
 .App-logo {
@@ -35,4 +38,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.candy-items {
+  text-align: center;
+  flex-wrap: wrap;
+  border: 5px solid red;
+  width: 300px;
 }
