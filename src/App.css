@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   flex-wrap: wrap;
-  border: 5px solid red;
   
 }
 
@@ -43,6 +42,22 @@
 .candy-items {
   text-align: center;
   flex-wrap: wrap;
-  border: 5px solid red;
-  width: 300px;
+  width: 220px;
+}
+
+
+.candy-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  
 }
