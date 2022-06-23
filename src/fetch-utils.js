@@ -11,3 +11,8 @@ export async function getPlayers() {
   const response = await client.from('soccer_players').select('*');
   return response.data;
 }
+
+export async function getCars() {
+  const response = await client.from('cars').select('*');
+  return response.data;
+}

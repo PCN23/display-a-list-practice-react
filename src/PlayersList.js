@@ -7,7 +7,7 @@ export default function PlayersList({ players = [] }) {
     <div className='players-list'>PlayersList
       {
         players.map((player, i) => <PlayerItem {...player}
-          lassName='player' key={player.name + player.id + i}
+          className='player' key={player.name + player.id + i}
         />)
       }
 
