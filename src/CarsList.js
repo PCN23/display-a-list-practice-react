@@ -9,7 +9,6 @@ export default function CarsList({ cars = [] }) {
           key={car.name + car.id + i}
         />)
       }
-        
     </div>
   );
 }

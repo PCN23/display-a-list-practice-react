@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getCandies, getPlayers, getCars } from './fetch-utils';
+import { getCandies, getPlayers, getCars, getClubs } from './fetch-utils';
 import Spinner from './Spinner';
 import './App.css';
 import CandiesList from './CandiesList';
 import PlayersList from './PlayersList.js';
 import CarsList from './CarsList';
+import ClubsList from './CarsList';
 // import your arrays here
 
 function App() {
@@ -15,8 +16,17 @@ function App() {
   const [isLoadingPlayers, setIsLoadingPlayers] = useState(false);
   const [cars, setCars] = useState([]);
   const [isLoadingCars, setIsLoadingCars] = useState(false);
+  const [club, setClub] = useState([]);
+  const [isLoadingClubs, setIsLoadingClubs] = useState(false);
 
   
+  async function fetchClubs() {
+    setIsLoadingClubs(true);
+    const clubData = await getClubs();
+    setIsLoadingClubs(false);
+    setClub(clubData);
+  }
+
   async function fetchCars() {
     setIsLoadingCars(true);
     const data = await getCars();
@@ -43,6 +53,7 @@ function App() {
     fetchCandies();
     fetchPlayers();
     fetchCars();
+    fetchClubs();
   }, []);
 
 
@@ -65,6 +76,11 @@ function App() {
           isLoadingCars
             ? <Spinner name='cars'/>
             : <CarsList cars={cars}/>
+        }
+        {
+          isLoadingClubs
+            ? <Spinner name='clubs'/>
+            : <ClubsList club={club}/>
         }
         Render all your lists here. Pass the arrays as props.
       </header>
